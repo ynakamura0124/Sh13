@@ -48,13 +48,14 @@ void usage(char* argv0) {
 int main(int argc, char** argv)
 {
    std::string config_file_name;
+   std::string batch_file_name;
    bool batch_mode = false;
-   if (argc != 3) {
+   if (argc < 3) {
       usage(argv[0]);
       return 1;
    }
    int opt = 0;
-   while((opt = getopt(argc, argv, "i:o:c:b")) != -1) {
+   while((opt = getopt(argc, argv, "i:o:c:b:")) != -1) {
       switch (opt) {
       case 'i':
          break;
@@ -65,6 +66,7 @@ int main(int argc, char** argv)
          break;
       case 'b':
          batch_mode = true;
+         batch_file_name = optarg;
          break;
       default:
          usage(argv[0]);
@@ -80,10 +82,12 @@ int main(int argc, char** argv)
    G4RunManager* runManager = new G4RunManager;
 
    YamlParameter::Create(config_file_name);
+   std::cout << "[main()]: opened a yaml file: " << config_file_name << std::endl;
    RunConfigurator configurator;
    if(configurator.Configure(runManager))
       return 1;
 
+   std::cout << "[main()]: deleting the yaml file instance. " << std::endl;
    YamlParameter::Destroy();
 
    //runManager->SetUserAction( userSteppingAction );// Hmmmmm! What to do?
@@ -127,8 +131,7 @@ int main(int argc, char** argv)
       session = new G4UIterminal(); // G4UIterminal is a (dumb) terminal.
   //#endif
       G4String command = "/control/execute ";
-      G4String fileName = argv[1];
-      G4String totalCmd(command + fileName);
+      G4String totalCmd(command + batch_file_name);
       G4cout << totalCmd << G4endl;
       UI->ApplyCommand(totalCmd);
 

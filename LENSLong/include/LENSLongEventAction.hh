@@ -48,7 +48,7 @@ class LENSLongEventAction : public G4UserEventAction
     void BeginOfEventAction(const G4Event*);
     void EndOfEventAction(const G4Event*);
 	
-  private:
+  protected:
     void StartUp();
 		void CleanUp();
 		G4double GetNonlinearEnergyDeposit( const G4double E, const G4double eDep );

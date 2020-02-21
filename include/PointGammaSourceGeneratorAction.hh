@@ -21,5 +21,6 @@ public:
 protected:
 	G4ParticleGun* particle_gun_;
 	GSource4G4* gamma_source_ = nullptr;
+	G4bool completed_ = false;
 };
 #endif

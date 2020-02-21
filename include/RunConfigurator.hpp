@@ -1,6 +1,10 @@
 #ifndef RUN_CONFIGURATOR_HPP
 #define RUN_CONFIGURATOR_HPP
 
+#ifdef USE_BRIKEN
+#include "BRIKENGammaSourceGeneratorAction.hh"
+#endif
+
 #include <iostream>
 #include "G4VUserDetectorConstruction.hh"
 #include "G4VUserPhysicsList.hh"
@@ -16,7 +20,9 @@
 #include "LENSLongPrimaryGeneratorAction.hh"
 #include "LENSLongDetectorConstruction.hh"
 #include "CloverSimDetectorConstruction.hh"
+#include "CloverSimEventAction.hh"
 #include "PointGammaSourceGeneratorAction.hh"
+
 
 class RunConfigurator {
 public:

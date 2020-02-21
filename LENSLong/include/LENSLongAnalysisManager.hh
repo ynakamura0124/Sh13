@@ -26,6 +26,13 @@
 #define LENSLongAnalysisManger_h 1
 
 #include <stdio.h>
+#include <globals.hh>
+#include <G4ThreeVector.hh>
+#include <TObject.h>
+#include <TFile.h>
+#include <TTree.h>
+#include <TH1.h>
+#include <TNtuple.h>
 
 // Forward declarations of Geant4 classes
 class G4Run;
@@ -129,7 +136,7 @@ public:
 	void nextEvent();
 	void endofEvent( G4int eventID );
 
-private:
+protected:
 
   TObjArray* m_HistogramList;
   TFile* m_RootOutputFile;
@@ -151,7 +158,7 @@ private:
 
   void SetUp();
   void CleanUp();
-  void MakeAndOpenOutputFile();
+  virtual void MakeAndOpenOutputFile();
   void CloseOutputFile();
   
   G4int m_temp;

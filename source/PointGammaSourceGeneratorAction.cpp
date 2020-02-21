@@ -7,7 +7,6 @@ int PointGammaSourceGeneratorAction::Configure() {
 	particle_gun_ = new G4ParticleGun(1);
 	G4ParticleTable* particle_table = G4ParticleTable::GetParticleTable();
 	particle_gun_->SetParticleDefinition(particle_table->FindParticle("gamma"));
-	particle_gun_->SetParticlePosition(G4ThreeVector(0.0,0.0,0.0));
 
 	/* read yaml file and create a gamma source instance */
 	YamlReader yaml_reader("PointGammaSourceGeneratorAction");
@@ -18,6 +17,14 @@ int PointGammaSourceGeneratorAction::Configure() {
 	gamma_source_ = new GSource4G4(yaml_reader.GetString("SourceFile"));
 	gamma_source_->SetNevent(yaml_reader.GetULong64("NEvent"));
 
+	/* set particle position */
+	const G4double pos_x = yaml_reader.GetDouble("PositionX",false,0.0) * CLHEP::mm;
+	const G4double pos_y = yaml_reader.GetDouble("PositionY",false,0.0) * CLHEP::mm;
+	const G4double pos_z = yaml_reader.GetDouble("PositionZ",false,0.0) * CLHEP::mm;
+	particle_gun_->SetParticlePosition(G4ThreeVector(pos_z,pos_y,pos_x));
+
+	completed_ = false;
+
 	if (!gamma_source_)
 		return 1;
 	else
@@ -26,8 +33,16 @@ int PointGammaSourceGeneratorAction::Configure() {
 
 void PointGammaSourceGeneratorAction::GeneratePrimaries( G4Event* anEvent ) {
 	/* set gamma-ray energy*/
-	G4int n_gamma = 0;
-	while (!(n_gamma = gamma_source_->EmitGamma())) {}
+	if (!gamma_source_->IfNext()) {
+		particle_gun_->SetParticleEnergy(0.);
+		if (!completed_) {
+			std::cout << "[PointGammaSourceGeneratorAction]: gamma emission completed." << std::endl;
+			completed_ = true;
+		}
+		return;
+	}
+
+	G4int n_gamma = gamma_source_->EmitGamma();
 	for (int i = 0; i < n_gamma; ++i) {
 		/* set gamma-ray direction */
 		{

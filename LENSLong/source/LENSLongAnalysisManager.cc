@@ -108,7 +108,8 @@ LENSLongAnalysisManager::LENSLongAnalysisManager()
 	
 	m_pLiquidScintillatorOutputFile = 0;
 	
-	m_Output10nsWaveform = true;
+	m_Output10nsWaveform = false;
+	//m_Output10nsWaveform = true;
 	m_NumberTimes = 650;
   m_NumberModules = 19;
 
@@ -150,7 +151,7 @@ LENSLongAnalysisManager::~LENSLongAnalysisManager()
 //	MakeAndOpenOutputFile();
 
 // No need to write to file until the end? Even if it is REALLY BIG?
-  MakeAndOpenOutputFile();
+  //MakeAndOpenOutputFile();
 	if( m_RootOutputFile != 0 )
 	{
 // Create an array of Histograms

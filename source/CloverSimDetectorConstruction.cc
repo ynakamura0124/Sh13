@@ -11,7 +11,7 @@
 #include "G4SDManager.hh"
 
 #include "G4VisAttributes.hh"
-
+#include "YamlReader.hpp"
 
 
 using namespace CLHEP;
@@ -31,18 +31,43 @@ G4VPhysicalVolume* CloverSimDetectorConstruction::Construct()
 	
 //  ConstructLENSLongHall();
 //	if( m_UsePixelatedLattice )	ConstructLENSPixelatedLatticeScintillator();
-	ConstructLENSLongScintillator();
+	ConstructDetector();
 
 //  DumpGeometricalTree(m_pWorld_phyVol);// Get too long of an output and hence is confusing.
 
   return m_pWorld_phyVol;
 }
 
+void CloverSimDetectorConstruction::ConstructMaterials() {
+   LENSLongDetectorConstruction::ConstructMaterials();
+   if (m_PLA)
+      delete m_PLA;
+
+   auto GetElement = [](const std::string e_name)->G4Element* {
+      G4ElementTable* elemTable = G4Element::GetElementTable();
+      auto itr = std::find_if(
+         elemTable->begin(),
+         elemTable->end(),
+         [&e_name](G4Element* const &x)->bool {return e_name == x->GetName(); }
+      );
+      if (itr == elemTable->end())
+         std::cout << "Cannot find the element named: " << e_name << std::endl;
+      return *itr;
+   };
+   
+   m_PLA = new G4Material("PLA", 1.24 * mg / cm3, 3);
+   m_PLA->AddElement(GetElement("Hydrogen"), 1);
+   m_PLA->AddElement(GetElement("Oxygen"), 3);
+   m_PLA->AddElement(GetElement("Carbon"), 3);
+
+   return;
+}
+
 void CloverSimDetectorConstruction::ConstructDetector() {
    G4String SDname;
    m_LENSLongBoxScintillatorSD = new CloverSimDetector( SDname = "/LiquidScintillator" );
 // The "this" pointer alows the LENSLongLiquidScintillator to get things such as BunkerWidth(), Materials, etc...
-	m_LENSLongBoxScintillatorSD->ConstructLiquidDetector( this ); 
+	((CloverSimDetector*)m_LENSLongBoxScintillatorSD)->ConstructDetector( this ); 
 
 }
 
