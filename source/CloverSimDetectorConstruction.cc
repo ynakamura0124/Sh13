@@ -40,8 +40,8 @@ G4VPhysicalVolume* CloverSimDetectorConstruction::Construct()
 
 void CloverSimDetectorConstruction::ConstructMaterials() {
    LENSLongDetectorConstruction::ConstructMaterials();
-   if (m_PLA)
-      delete m_PLA;
+//   if (m_PLA)
+//      delete m_PLA;
 
    auto GetElement = [](const std::string e_name)->G4Element* {
       G4ElementTable* elemTable = G4Element::GetElementTable();

@@ -6,7 +6,7 @@ add_library(PhysicsListLib SHARED
 	PhysListEmStandardSS.cc
 	StepMax.cc
 	StepMaxMessenger.cc
-	NeutronHPphysics.cc
+	#NeutronHPphysics.cc
 	NeutronHPMessenger.cc
 	G4ScreenedNuclearRecoil.cc
 	G4LindhardPartition.cc

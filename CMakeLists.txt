@@ -12,9 +12,10 @@ find_package(Geant4 REQUIRED ui_all vis_all)
 include(${Geant4_USE_FILE})
 
 # find ROOT package.
-find_package(ROOT REQUIRED COMPONENTS Core RIO Net Hist Tree)
 list(APPEND CMAKE_PREFIX_PATH $ENV{ROOTSYS})
+find_package(ROOT REQUIRED COMPONENTS Core RIO Net Hist Tree TreePlayer)
 #include(${ROOT_USE_FILE})
+include_directories($ENV{ROOTSYS}/include)
 
 # Set the default install prefix to [source_dir]/install
 set(CMAKE_INSTALL_PREFIX ${CMAKE_SOURCE_DIR}/install CACHE PATH "install dir" FORCE)
@@ -47,7 +48,7 @@ if (CLOVERSIM_USE_BRIKEN)
 	add_subdirectory(BRIKEN)
 endif (CLOVERSIM_USE_BRIKEN)
 add_executable (CloverSim "CloverSim.cpp")
-add_executable (main "test.cpp")
+#add_executable (main "test.cpp")
 
 target_link_libraries(CloverSim
 	CloverSimLib
@@ -55,14 +56,14 @@ target_link_libraries(CloverSim
 	LENSLongLib
 )
 
-target_link_libraries(main
-	${ROOT_LIBRARIES}
-	#BRIKENLib
-	#CloverSimLib
-	#PhysicsListLib
-	#LENSLongLib
-	#data2TreeLib
-)
+#target_link_libraries(main
+#	${ROOT_LIBRARIES}
+#	#BRIKENLib
+#	#CloverSimLib
+#	#PhysicsListLib
+#	#LENSLongLib
+#	#data2TreeLib
+#)
 
 if (CLOVERSIM_USE_BRIKEN)
 	target_link_libraries(CloverSim	BRIKENLib)
@@ -74,8 +75,8 @@ install(TARGETS CloverSim
 	PUBLIC_HEADER DESTINATION include
 )
 
-install(TARGETS main
-	RUNTIME DESTINATION bin
-	LIBRARY DESTINATION lib
-	PUBLIC_HEADER DESTINATION include)
+#install(TARGETS main
+#	RUNTIME DESTINATION bin
+#	LIBRARY DESTINATION lib
+#	PUBLIC_HEADER DESTINATION include)
 
