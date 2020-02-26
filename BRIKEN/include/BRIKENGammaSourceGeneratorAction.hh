@@ -16,7 +16,7 @@ public:
 
 	static const double GetYSOPosZ() { return 0.0 * CLHEP::mm; }
 	static const std::vector<G4double> GetWAS3ABiPosZVec() {
-		const G4double dist = 3.5 * CLHEP::cm;
+		const G4double dist = 1.675 * CLHEP::cm;
 		std::vector<G4double> vec = {
 			dist - 0.5 * CLHEP::mm,
 			dist + (4.5 - 0.5) * CLHEP::mm,

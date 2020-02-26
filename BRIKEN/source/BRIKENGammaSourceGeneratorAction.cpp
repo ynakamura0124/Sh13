@@ -14,7 +14,8 @@ BRIKENGammaSourceGeneratorAction::~BRIKENGammaSourceGeneratorAction() {
 bool BRIKENGammaSourceGeneratorAction::Next() {
 	/* reads the next entry of the tree */
 	/* if the file ends, restart from the first entry */
-	auto read_next = [&]()->bool { gROOT->ProcessLine("param->SetVal(reader->Next());"); return ret_val_->GetVal(); };
+	//auto read_next = [&]()->bool { gROOT->ProcessLine("param->SetVal(reader->Next());"); return ret_val_->GetVal(); };
+	auto read_next = [&]()->bool { return tree_reader_->Next();};
 	if (!read_next()) {
 		gROOT->ProcessLine("reader->Restart();");
 		if (!read_next()) {
@@ -48,7 +49,7 @@ const G4ThreeVector BRIKENGammaSourceGeneratorAction::ReadPosition() {
 		}
 
 		/* finds the deepest layer hit in the event */
-		auto imp_vec = data->vectorOfImp;
+		auto &imp_vec = data->vectorOfImp;
 		last_layer = -1;
 		for (const auto& imp : imp_vec) {
 			if (last_layer < imp.Z)
@@ -62,8 +63,7 @@ const G4ThreeVector BRIKENGammaSourceGeneratorAction::ReadPosition() {
 	} while (invalid || last_layer > data->z);
 	// if Z is smaller than last layer, that means the ion didn't
 	// stop at this layer so skip.
-
-
+	
 	G4double pos_x = 0.0;
 	G4double pos_y = 0.0;
 	G4double pos_z = 0.0;
