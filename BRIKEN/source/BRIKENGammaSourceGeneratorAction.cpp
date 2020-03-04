@@ -70,11 +70,13 @@ const G4ThreeVector BRIKENGammaSourceGeneratorAction::ReadPosition() {
 
 	if (data->z == 4) { // YSO
 		pos_x = GetYSOPosZ();
+		pos_x = pos_x + (rand3.Rndm() - 0.5)*GetYSOThickness();
 		pos_z = GetYSOPosXY(data->x);
 		pos_y = GetYSOPosXY(data->y);
 	}
 	else { // WAS3ABi
 		pos_x = GetWAS3ABiPosZVec().at(data->z);
+		pos_x = pos_x + (rand3.Rndm() - 0.5)*GetWAS3ABiThickness();
 		const auto cont = [&](const int& x)->double {return (double)x + rand3.Rndm(); };
 		pos_z = GetWAS3ABiPosXY(cont(data->x));
 		pos_y = GetWAS3ABiPosXY(cont(data->y));

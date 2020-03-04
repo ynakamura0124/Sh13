@@ -44,8 +44,15 @@ void CloverSimDetector::ConstructDetector(LENSLongDetectorConstruction* mainDete
 
 		/* set placement (positive x) */
 		const G4double dist = 3.5 * CLHEP::cm;
-		G4ThreeVector placement(2.25 * CLHEP::cm, 0.0 * CLHEP::cm, dist + 0.5 * (297.0) * CLHEP::mm);
+		const G4double clv_offset = 0.07 * dist;
+		G4ThreeVector placement( 2.25 * CLHEP::cm, 0.0 * CLHEP::cm, dist + 0.5 * (297.0) * CLHEP::mm + clv_offset );
 
+		/* adjust distance between clovers */
+		for (int i = 0; i < m_Gas_LogicalVolumes[0]->GetNoDaughters(); ++i) {
+			auto pvp = m_Gas_LogicalVolumes[0]->GetDaughter(i);
+			if(pvp->GetName() == "SingleModule_Volume")
+				pvp->SetTranslation(G4ThreeVector( 2.25 * CLHEP::cm, 0.0 * CLHEP::cm, -(dist + 0.5 * (297.0) * CLHEP::mm + clv_offset )));
+		}
 		/* find a G4LogicalVolume whose name is "SingleModule_Volume" (the first clover) */
 		/* and place another one on the other side */
 		auto it = std::find_if(
@@ -54,7 +61,7 @@ void CloverSimDetector::ConstructDetector(LENSLongDetectorConstruction* mainDete
 			[](G4LogicalVolume* const &x)->bool {return x->GetName()=="Al_Can_Logical"; }
 		);
 		if (it != m_ModuleTotal_LogicalVolumes.end()) {
-			new G4PVPlacement(rot, placement, m_ModuleTotal_LogicalVolumes[1], "SingleModule_Volume", m_Gas_LogicalVolumes[0], 0, 1);
+			new G4PVPlacement(rot, placement, m_ModuleTotal_LogicalVolumes[1], "SingleModule_Volume2", m_Gas_LogicalVolumes[0], 0, 1);
 		}
 	}
 

@@ -40,6 +40,8 @@ protected:
 	bool Next();
 	static G4ThreeVector default_pos_;
 	TRandom3 rand3;
+	static const double GetYSOThickness(){ return 5.0 * CLHEP::mm; }
+	static const double GetWAS3ABiThickness(){ return 1.0 * CLHEP::mm; }
 };
 
 G4ThreeVector BRIKENGammaSourceGeneratorAction::default_pos_;
