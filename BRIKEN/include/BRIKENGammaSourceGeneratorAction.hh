@@ -14,7 +14,7 @@ public:
 	BRIKENGammaSourceGeneratorAction();
 	virtual ~BRIKENGammaSourceGeneratorAction();
 
-	static const double GetYSOPosZ() { return 0.0 * CLHEP::mm; }
+	static const double GetYSOPosZ() { return -5.0 * CLHEP::mm; }
 	static const std::vector<G4double> GetWAS3ABiPosZVec() {
 		const G4double dist = 1.675 * CLHEP::cm;
 		std::vector<G4double> vec = {
@@ -26,7 +26,7 @@ public:
 		return vec;
 	};
 	static const double GetYSOPosXY(const double &x) {
-		return 48.0 * ( (x-0.5)/0.3) * CLHEP::mm;
+		return 24.0 * ( (x-0.5)/0.3) * CLHEP::mm;
 		//return 48.0 * (x / 16.0 - 0.5) * CLHEP::mm;
 	}
 	static const double GetWAS3ABiPosXY(const double& x) {
