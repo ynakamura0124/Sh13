@@ -80,3 +80,8 @@ install(TARGETS CloverSim
 #	LIBRARY DESTINATION lib
 #	PUBLIC_HEADER DESTINATION include)
 
+configure_file(
+    "${CMAKE_CURRENT_SOURCE_DIR}/thiscloversim.sh.in"
+    "${CMAKE_SOURCE_DIR}/thiscloversim.sh"
+    @ONLY
+)
