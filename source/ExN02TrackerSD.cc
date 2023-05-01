@@ -68,7 +68,8 @@ void ExN02TrackerSD::Initialize(G4HCofThisEvent *HCE)
 	}
 	HCE->AddHitsCollection(HCID, trackerCollection);
 
-	totalEnergy = 0.0;
+	totalEnergy[0] = 0.0;
+	totalEnergy[1] = 0.0;
 }
 
 //....oooOO0OOooo........oooOO0OOooo........oooOO0OOooo........oooOO0OOooo......
@@ -78,56 +79,63 @@ G4bool ExN02TrackerSD::ProcessHits(G4Step *aStep, G4TouchableHistory *)
 	G4double edep = aStep->GetTotalEnergyDeposit();
 	// G4double edep = - aStep->GetDeltaEnergy();
 	// G4cout << "ProcessHits" << G4endl;
+	G4String hvolume = aStep->GetPostStepPoint()->GetTouchableHandle()->GetVolume()->GetName(); //get hit volume\
+ name
+	G4int hnum;
 
-	if (edep == 0.)
-		return false;
+	if (hvolume == "Sensitive")
+	{
+		hnum = aStep->GetPostStepPoint()->GetTouchableHandle()->GetCopyNumber(); // get id for hit volume
 
-	// Ignore gamma's edep
-	// G4String particle = aStep->GetTrack()->GetDefinition()->GetParticleName();
-	// if(particle=="gamma") return false;
+		if (edep == 0.)
+			return false;
 
-	// Deexcitation emit test
-	// G4ParticleDefinition* particleDefinition = aStep->GetTrack()->GetDefinition();
-	// G4String particleName = particleDefinition->GetParticleName();
-	// if(particleName=="gamma")
-	//{
-	//   G4ParticleChangeForGamma* pChange = new G4ParticleChangeForGamma();
-	//	G4ThreeVector direction = G4ThreeVector(0.,0.,1.);
-	//	G4DynamicParticle* dParticle = new G4DynamicParticle(particleDefinition, direction, edep);
-	//	G4cout << "test" << G4endl;
-	//	pChange->AddSecondary(dParticle);
-	//	return false;
-	// }
+		// Ignore gamma's edep
+		// G4String particle = aStep->GetTrack()->GetDefinition()->GetParticleName();
+		// if(particle=="gamma") return false;
 
-	totalEnergy += edep;
-	// G4cout << "ThisEdep : " << G4BestUnit(edep, "Energy") << G4endl;
+		// Deexcitation emit test
+		// G4ParticleDefinition* particleDefinition = aStep->GetTrack()->GetDefinition();
+		// G4String particleName = particleDefinition->GetParticleName();
+		// if(particleName=="gamma")
+		//{
+		//   G4ParticleChangeForGamma* pChange = new G4ParticleChangeForGamma();
+		//	G4ThreeVector direction = G4ThreeVector(0.,0.,1.);
+		//	G4DynamicParticle* dParticle = new G4DynamicParticle(particleDefinition, direction, edep);
+		//	G4cout << "test" << G4endl;
+		//	pChange->AddSecondary(dParticle);
+		//	return false;
+		// }
 
-	/*
-	  ExN02TrackerHit* newHit = new ExN02TrackerHit();
-	  newHit->SetTrackID  (aStep->GetTrack()->GetTrackID());
-	  newHit->SetParentID  (aStep->GetTrack()->GetParentID());
+		totalEnergy[hnum] += edep;
+		// G4cout << "ThisEdep : " << G4BestUnit(edep, "Energy") << G4endl;
 
-	  newHit->SetEdep     (edep);
-	  newHit->SetPos      (aStep->GetPostStepPoint()->GetPosition());
-	  trackerCollection->insert( newHit );
-	*/
-	// newHit->Print();
-	// newHit->Draw();
-	//////////////daiki /////////////
-	// G4String v1 = aStep->GetPreStepPoint()->GetPhysicalVolume()->GetName();
-	// G4String v2 = aStep->GetPostStepPoint()->GetPhysicalVolume()->GetName();
-	// G4cout << "v1 = " << v1 << G4endl;
-	// G4cout << "v2 = " << v2 << G4endl;
-	//	if(v1 == "sensitive" && v2 == "sensitive"){
-	//	char stri2[1000] = "";
-	// sprintf(stri2, "%f",totalEnergy);
-	// FILE *fp;
-	// fp = fopen("egamma.dat","a");
-	// fprintf(fp,"%s\n",stri2);
-	// fclose(fp);
-	// }
-	//////////////end////////////////
+		/*
+		  ExN02TrackerHit* newHit = new ExN02TrackerHit();
+		  newHit->SetTrackID  (aStep->GetTrack()->GetTrackID());
+		  newHit->SetParentID  (aStep->GetTrack()->GetParentID());
 
+		  newHit->SetEdep     (edep);
+		  newHit->SetPos      (aStep->GetPostStepPoint()->GetPosition());
+		  trackerCollection->insert( newHit );
+		*/
+		// newHit->Print();
+		// newHit->Draw();
+		//////////////daiki /////////////
+		// G4String v1 = aStep->GetPreStepPoint()->GetPhysicalVolume()->GetName();
+		// G4String v2 = aStep->GetPostStepPoint()->GetPhysicalVolume()->GetName();
+		// G4cout << "v1 = " << v1 << G4endl;
+		// G4cout << "v2 = " << v2 << G4endl;
+		//	if(v1 == "sensitive" && v2 == "sensitive"){
+		//	char stri2[1000] = "";
+		// sprintf(stri2, "%f",totalEnergy);
+		// FILE *fp;
+		// fp = fopen("egamma.dat","a");
+		// fprintf(fp,"%s\n",stri2);
+		// fclose(fp);
+		// }
+		//////////////end////////////////
+	}
 	return true;
 }
 
@@ -140,16 +148,21 @@ void ExN02TrackerSD::EndOfEvent(G4HCofThisEvent *)
 	//	{
 	// G4int NbHits = trackerCollection->entries();
 	// for (G4int i=0;i<NbHits;i++) (*trackerCollection)[i]->Print();
-	if (totalEnergy != 0.0)
+	for (G4int i = 0; i < 2; i++)
 	{
-		//		  G4cout
-		//	  << "TotalEnergyDeposit : "
-		//	  << G4BestUnit(totalEnergy, "Energy")
-		//		<< G4endl;
+		if (totalEnergy[i] != 0.0)
+		{
+			//		  G4cout
+			//	  << "TotalEnergyDeposit : "
+			//	  << G4BestUnit(totalEnergy, "Energy")
+			//		<< G4endl;
 
-		ExN02TrackerHit *ahit = new ExN02TrackerHit(totalEnergy);
-		trackerCollection->insert(ahit);
+			ExN02TrackerHit *ahit = new ExN02TrackerHit(totalEnergy[i]);
+			ahit->SetGeID(i);
+			trackerCollection->insert(ahit);
+		}
 	}
+
 	//}
 }
 

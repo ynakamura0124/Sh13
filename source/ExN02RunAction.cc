@@ -47,14 +47,15 @@ ExN02RunAction::ExN02RunAction()
   gROOT->Reset();
 
   // define histograms
-  edep = new TH1D("edep", "energy", 1600, 0.0, 1600.);
+  edep1 = new TH1D("edep1", "energy1", 1600, 0.0, 1600.);
+  edep2 = new TH1D("edep2", "energy2", 1600, 0.0, 1600.);
 }
 
 //....oooOO0OOooo........oooOO0OOooo........oooOO0OOooo........oooOO0OOooo......
 
 ExN02RunAction::~ExN02RunAction()
 {
-  delete edep;
+  delete edep1, edep2;
 }
 
 //....oooOO0OOooo........oooOO0OOooo........oooOO0OOooo........oooOO0OOooo......
@@ -63,7 +64,8 @@ void ExN02RunAction::BeginOfRunAction(const G4Run *aRun)
 {
   G4cout << "### Run " << aRun->GetRunID() << " start." << G4endl;
 
-  edep->Reset();
+  edep1->Reset();
+  edep2->Reset();
 }
 
 //....oooOO0OOooo........oooOO0OOooo........oooOO0OOooo........oooOO0OOooo......
@@ -72,8 +74,8 @@ void ExN02RunAction::EndOfRunAction(const G4Run *)
 {
   TFile *file = new TFile("Ge1.root",
                           "RECREATE", "Geant4 ROOT analysis");
-  edep->Write();
-
+  edep1->Write();
+  edep2->Write();
   file->Close();
   delete file;
 }

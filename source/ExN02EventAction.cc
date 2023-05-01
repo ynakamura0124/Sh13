@@ -102,14 +102,23 @@ void ExN02EventAction::EndOfEventAction(const G4Event *evt)
   for (G4int idx = 0; idx < nhits; idx++)
   {
     G4double etotal = (*hctra)[idx]->GetEgamma();
+    G4int geid = (*hctra)[idx]->GetGeID();
     // G4cout << etotal << G4endl;
 
     // fill a histogram
     G4RunManager *runManager = G4RunManager::GetRunManager();
     ExN02RunAction *runaction = (ExN02RunAction *)(runManager->GetUserRunAction());
-    TH1D *edep = runaction->GetHist();
-    // TH1D* hist_shower= (TH1D*)gROOT-> FindObject("shower");
-    edep->Fill(etotal / CLHEP::keV);
+    if (geid == 0)
+    {
+      TH1D *edep1 = runaction->GetHist1();
+      edep1->Fill(etotal / CLHEP::keV);
+    }
+    if (geid == 1)
+    {
+      TH1D *edep2 = runaction->GetHist2();
+      edep2->Fill(etotal / CLHEP::keV);
+      // TH1D* hist_shower= (TH1D*)gROOT-> FindObject("shower");
+    }
   }
 }
 //....oooOO0OOooo........oooOO0OOooo........oooOO0OOooo........oooOO0OOooo......

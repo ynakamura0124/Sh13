@@ -63,11 +63,13 @@ void Sh13DetectorConstruction::ConstructDetector()
    G4LogicalVolume *layerLogicTube =
        new G4LogicalVolume(sensitiveCylinder, Ge, "sensitiveLV", 0, 0, 0);
    G4RotationMatrix *angle = new G4RotationMatrix(0. * deg, 0. * deg, 0. * deg);
-   G4ThreeVector sensitivePosit = G4ThreeVector(0, 0, 0.);
+   G4ThreeVector sensitivePosit1 = G4ThreeVector(0, 0, 100.);
+   G4ThreeVector sensitivePosit2 = G4ThreeVector(0, 0, -100.);
 
-   new G4PVPlacement(angle, sensitivePosit, layerLogicTube,
+   new G4PVPlacement(angle, sensitivePosit1, layerLogicTube,
                      "Sensitive", m_pWorld_logVol, false, 0);
-
+   new G4PVPlacement(angle, sensitivePosit2, layerLogicTube,
+                     "Sensitive", m_pWorld_logVol, false, 1);
    // define sensitive detector
    G4SDManager *SDman = G4SDManager::GetSDMpointer();
 

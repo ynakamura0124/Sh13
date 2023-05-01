@@ -26,7 +26,7 @@
 //
 // $Id: ExN02RunAction.hh,v 1.8 2006/06/29 17:47:45 gunter Exp $
 // GEANT4 tag $Name: geant4-08-03-patch-01 $
-// 
+//
 //....oooOO0OOooo........oooOO0OOooo........oooOO0OOooo........oooOO0OOooo......
 //....oooOO0OOooo........oooOO0OOooo........oooOO0OOooo........oooOO0OOooo......
 
@@ -44,26 +44,26 @@ class TH1D;
 class ExN02RunAction : public G4UserRunAction
 {
 private:
-  TH1D* edep;
+  TH1D *edep1, *edep2;
 
-  public:
-    ExN02RunAction();
+public:
+  ExN02RunAction();
   virtual ~ExN02RunAction();
 
-  public:
-   virtual void BeginOfRunAction(const G4Run*);
-   virtual void EndOfRunAction(const G4Run*);
+public:
+  virtual void BeginOfRunAction(const G4Run *);
+  virtual void EndOfRunAction(const G4Run *);
 
-   TH1D* GetHist() const {
-    return edep;
-   } // get a hist objects
+  TH1D *GetHist1() const
+  {
+    return edep1;
+  } // get a hist objects
+  TH1D *GetHist2() const
+  {
+    return edep2;
+  } // get a hist objects
 };
 
 //....oooOO0OOooo........oooOO0OOooo........oooOO0OOooo........oooOO0OOooo......
 
 #endif
-
-
-
-
-
