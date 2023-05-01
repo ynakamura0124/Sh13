@@ -35,11 +35,11 @@
 /vis/drawVolume
 #
 # Specify view angle:
-/vis/viewer/set/viewpointThetaPhi 0. 90.
+/vis/viewer/set/viewpointThetaPhi 45. 90.
 #/vis/viewer/set/viewpointThetaPhi 90. 0.
 #
 # Specify zoom value:
-/vis/viewer/zoom 3
+/vis/viewer/zoom 100
 #/vis/viewer/addCutawayPlane 0 0 0 m 0 0 -1
 #/vis/viewer/pan 1.5 0 cm
 

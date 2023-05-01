@@ -8,7 +8,12 @@ add_library(CloverSimLib SHARED
 	PointGammaSourceGeneratorAction.cpp
 	CloverSimAnalysisManager.cpp
 	RunConfigurator.cpp
-)
+	Sh13DetectorConstruction.cc
+	ExN02EventAction.cc
+	ExN02RunAction.cc
+	ExN02TrackerHit.cc
+	ExN02TrackerSD.cc
+	)
 
 target_link_libraries(CloverSimLib ${YAML_CPP_LIBRARIES} ${ROOT_LIBRARIES} ${Geant4_LIBRARIES})
 

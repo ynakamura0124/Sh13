@@ -13,9 +13,9 @@
 #/tracking/storeTrajectory 1
 #/vis/scene/endOfEventAction accumulate
 
-/random/resetEngineFrom currentEvent.rndm
+#/random/resetEngineFrom currentEvent.rndm
 #/random/resetEngineFrom beginRandom.rndm
-/random/setSavingFlag true
+#/random/setSavingFlag true
 
 #/gun/particle gamma
 #/gun/position 0 0 0 m

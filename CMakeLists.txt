@@ -2,6 +2,7 @@
 #----------------------------------------------------------------------------
 # Setup the project
 project ("CloverSim")
+set(CMAKE_CXX_STANDARD 14)
 
 # find yaml-cpp package
 find_package(yaml-cpp)

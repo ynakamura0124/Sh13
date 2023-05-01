@@ -1,16 +1,19 @@
 RunConfigurator:
-        DetectorConstruction: CloverSimDetectorConstruction
+        DetectorConstruction: Sh13DetectorConstruction
+#        DetectorConstruction: CloverSimDetectorConstruction
         PhysicsList: PhysicsList
         PrimaryGeneratorAction: PointGammaSourceGeneratorAction
         #PrimaryGeneratorAction: BRIKENGammaSourceGeneratorAction
-        RunAction: LENSLongRunAction
+        #RunAction: LENSLongRunAction
+        RunAction: ExN02RunAction
         #EventAction: LENSLongEventAction
-        EventAction: CloverSimEventAction
+        #EventAction: CloverSimEventAction
+        EventAction: ExN02EventAction
 
 PointGammaSourceGeneratorAction:
         SourceFile: '152Eu.txt'
         #SourceFile: 'nogamma.txt'
-        NEvent: 10000000
+        NEvent: 100000
         PositionX: 0.0
         PositionY: 0.0
         PositionZ: 0.0 # YSO
