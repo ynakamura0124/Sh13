@@ -2,7 +2,7 @@ add_library(LENSLongLib SHARED
 	G4BetaDecayCorrections.cc
 	G4BetaDecayType.cc
 	G4BetaFermiFunction.cc
-	G4ScreenedNuclearRecoil.cc
+	#G4ScreenedNuclearRecoil.cc
 	GLG4OpAttenuation.cc
 	GLG4Scint.cc
 	MendelejewProvider.cc

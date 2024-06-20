@@ -48,7 +48,7 @@ void CloverSimDetector::ConstructDetector(LENSLongDetectorConstruction* mainDete
 		G4ThreeVector placement( 2.25 * CLHEP::cm, 0.0 * CLHEP::cm, dist + 0.5 * (297.0) * CLHEP::mm + clv_offset );
 
 		/* adjust distance between clovers */
-		for (int i = 0; i < m_Gas_LogicalVolumes[0]->GetNoDaughters(); ++i) {
+		for (size_t i = 0; i < m_Gas_LogicalVolumes[0]->GetNoDaughters(); ++i) {
 			auto pvp = m_Gas_LogicalVolumes[0]->GetDaughter(i);
 			if(pvp->GetName() == "SingleModule_Volume")
 				pvp->SetTranslation(G4ThreeVector( 2.25 * CLHEP::cm, 0.0 * CLHEP::cm, -(dist + 0.5 * (297.0) * CLHEP::mm + clv_offset )));
@@ -79,8 +79,8 @@ void CloverSimDetector::ConstructDetector(LENSLongDetectorConstruction* mainDete
 			(*it)->SetVisAttributes(yso_vis_att_); 
 
 		/* change the placement position of "YSO_Volume" */
-		const G4double dist = 3.5 * CLHEP::cm;
-		for (int i = 0; i < m_Gas_LogicalVolumes[0]->GetNoDaughters(); ++i) {
+		//const G4double dist = 3.5 * CLHEP::cm;
+		for (size_t i = 0; i < m_Gas_LogicalVolumes[0]->GetNoDaughters(); ++i) {
 			auto pvp = m_Gas_LogicalVolumes[0]->GetDaughter(i);
 			if(pvp->GetName() == "YSO_Volume")
 				//pvp->SetTranslation(G4ThreeVector(-dist, 0.0 * CLHEP::cm, 0.0 * CLHEP::cm));

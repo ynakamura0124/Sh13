@@ -13,7 +13,7 @@ RunConfigurator:
 PointGammaSourceGeneratorAction:
         SourceFile: '152Eu.txt'
         #SourceFile: 'nogamma.txt'
-        NEvent: 100000
+        NEvent: 100
         PositionX: 0.0
         PositionY: 0.0
         PositionZ: 0.0 # YSO

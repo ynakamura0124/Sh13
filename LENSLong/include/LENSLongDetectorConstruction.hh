@@ -62,19 +62,34 @@ public:
 	
 	void GetBeamPipeLaunchCoordinateGlobal( G4ThreeVector& center ) const;
 	void GetHitModuleCenterGlobal( G4ThreeVector& center ) const;
-	const G4double GetCellX() const;
-	const G4double GetCellY() const;
-	const G4double GetCellZ() const;
 
-	const G4double GetCellXOffset() const;
-	const G4double GetCellYOffset() const;
-	const G4double GetCellZOffset() const;
+	//const G4double GetCellX() const;
+	//const G4double GetCellY() const;
+	//const G4double GetCellZ() const;
 
-	const G4double GetFullDetectorWidth() const;
-	const G4double GetFullDetectorHeight() const;
-	const G4double GetFullDetectorDepth() const;
+	//const G4double GetCellXOffset() const;
+	//const G4double GetCellYOffset() const;
+	//const G4double GetCellZOffset() const;
 
-	const G4double GetFloorThickness() const { return m_FloorThickness; }
+	//const G4double GetFullDetectorWidth() const;
+	//const G4double GetFullDetectorHeight() const;
+	//const G4double GetFullDetectorDepth() const;
+	
+	G4double GetCellX() const;
+	G4double GetCellY() const;
+	G4double GetCellZ() const;
+
+	G4double GetCellXOffset() const;
+	G4double GetCellYOffset() const;
+	G4double GetCellZOffset() const;
+
+	G4double GetFullDetectorWidth() const;
+	G4double GetFullDetectorHeight() const;
+	G4double GetFullDetectorDepth() const;
+
+	//const G4double GetFloorThickness() const { return m_FloorThickness; }
+
+	G4double GetFloorThickness() const { return m_FloorThickness; }
 	
 	G4Material* GetVacuum( ) const { return m_Vacuum; }
 	G4Material* GetAir( ) const { return m_Air; }
@@ -115,7 +130,8 @@ public:
 // All of the Set...() functions
 	void SetFloorThickness( G4double newThickness ) { m_FloorThickness = newThickness; }
 
-	const G4double GetOpticalPhotonEmissionFraction() const;
+	// const G4double GetOpticalPhotonEmissionFraction() const;
+	G4double GetOpticalPhotonEmissionFraction() const;
 	
 // END Set...() functions
 

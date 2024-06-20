@@ -1,4 +1,5 @@
 #include "RunConfigurator.hpp"
+#include "QGSP_BERT.hh"
 
 RunConfigurator::~RunConfigurator()
 {
@@ -54,7 +55,7 @@ int RunConfigurator::Configure(G4RunManager *runManager)
 	// Selection of the PhysicsList from Yaml
 	std::map<std::string, std::function<G4VUserPhysicsList *()>> pl_map;
 	pl_map.emplace("PhysicsList", []()
-				   { return new PhysicsList(); });
+				   { return new QGSP_BERT; });
 	physics_list_ = pl_map[yaml_reader.GetString("PhysicsList")]();
 
 	if (!(detector_construction_) || !(physics_list_))

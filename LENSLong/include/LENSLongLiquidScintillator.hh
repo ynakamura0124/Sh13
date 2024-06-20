@@ -56,24 +56,24 @@ class LENSLongLiquidScintillator : public G4VSensitiveDetector
 
 	void GetBeamPipeLaunchCoordinateGlobal( G4ThreeVector& center ) const { center = m_SourceLocation; }
 	void GetHitModuleCenterGlobalCoord( G4ThreeVector& bunkerCenterG ) const;
-	inline const G4double GetSodiumIodideX() const { return m_SodiumIodideDimensions[0][0]; }// TEMP and BAD TEMP at that.
-	inline const G4double GetSodiumIodideY() const { return m_SodiumIodideDimensions[0][1]; }// TEMP and BAD TEMP at that.
-	inline const G4double GetSodiumIodideZ() const { return m_SodiumIodideDimensions[0][2]; }// TEMP and BAD TEMP at that.
+	inline G4double GetSodiumIodideX() const { return m_SodiumIodideDimensions[0][0]; }// TEMP and BAD TEMP at that.
+	inline G4double GetSodiumIodideY() const { return m_SodiumIodideDimensions[0][1]; }// TEMP and BAD TEMP at that.
+	inline G4double GetSodiumIodideZ() const { return m_SodiumIodideDimensions[0][2]; }// TEMP and BAD TEMP at that.
 
-	inline const G4double GetDetectorWidth() const { return ( m_ModuleTotalDimensions[1][0] ); }// TEMP and BAD TEMP at that.
-	inline const G4double GetDetectorHeight() const { return ( 7 * m_ModuleTotalDimensions[1][1] ); }// TEMP and BAD TEMP at that.
-	inline const G4double GetDetectorDepth() const { return ( 7 * m_ModuleTotalDimensions[1][2] ); }// TEMP and BAD TEMP at that.
+	inline G4double GetDetectorWidth() const { return ( m_ModuleTotalDimensions[1][0] ); }// TEMP and BAD TEMP at that.
+	inline G4double GetDetectorHeight() const { return ( 7 * m_ModuleTotalDimensions[1][1] ); }// TEMP and BAD TEMP at that.
+	inline G4double GetDetectorDepth() const { return ( 7 * m_ModuleTotalDimensions[1][2] ); }// TEMP and BAD TEMP at that.
 	
-	inline const G4double GetModuleX( const int index ) const { return ( m_ModuleTotalDimensions[index][0] ); }// TEMP and BAD TEMP at that.
-	inline const G4double GetModuleY( const int index ) const { return ( m_ModuleTotalDimensions[index][1] ); }// TEMP and BAD TEMP at that.
-	inline const G4double GetModuleZ( const int index ) const { return ( m_ModuleTotalDimensions[index][2] ); }// TEMP and BAD TEMP at that.
+	inline G4double GetModuleX( const int index ) const { return ( m_ModuleTotalDimensions[index][0] ); }// TEMP and BAD TEMP at that.
+	inline G4double GetModuleY( const int index ) const { return ( m_ModuleTotalDimensions[index][1] ); }// TEMP and BAD TEMP at that.
+	inline G4double GetModuleZ( const int index ) const { return ( m_ModuleTotalDimensions[index][2] ); }// TEMP and BAD TEMP at that.
 	
-	inline const G4double GetSourceRadius() const { return ( m_SourceRadius ); }
-	inline const G4bool IsSourceAlongFace() const { return m_SourceAlongFace; }
+	inline G4double GetSourceRadius() const { return ( m_SourceRadius ); }
+	inline G4bool IsSourceAlongFace() const { return m_SourceAlongFace; }
 	
-	const G4int GetModuleIndex( G4TouchableHistory* thePostTouchable ) const;
+	G4int GetModuleIndex( G4TouchableHistory* thePostTouchable ) const;
 		
-	const G4double GetOpticalPhotonEmissionFraction() const { return m_PhotonEmissionFraction; }
+	G4double GetOpticalPhotonEmissionFraction() const { return m_PhotonEmissionFraction; }
 
 // Inherited SD processing functions
     virtual void Initialize( G4HCofThisEvent*HCE );
