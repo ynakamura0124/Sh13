@@ -81,3 +81,15 @@ void Sh13DetectorConstruction::ConstructDetector()
    G4VisAttributes *layerVisAtt = new G4VisAttributes(G4Colour(1., 1., 1.));
    layerLogicTube->SetVisAttributes(layerVisAtt);
 }
+
+void Sh13DetectorConstruction::ConstructDetector()
+{
+const G4double dph1= 45.*deg;
+  G4ThreeVector Geposition1 = G4ThreeVector(0, 0.,Ge1pos);
+  G4RotationMatrix Geangle1 = G4RotationMatrix();
+  Geposition1.rotateY(dph1);
+  Geangle1.rotateY(dph1);
+
+  new G4PVPlacement(G4Transform3D(Geangle1,Geposition1),sensitiveLogicTube1,"SensitiveGe1", logicWorld, false, 0, true);
+
+}

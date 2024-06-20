@@ -1,4 +1,4 @@
-#include "CloverSimDetectorConstruction.hh"
+#include "Sh13DetectorConstruction.hh"
 #include "globals.hh"
 
 #include "G4Material.hh"
@@ -15,7 +15,7 @@
 
 
 using namespace CLHEP;
-G4VPhysicalVolume* CloverSimDetectorConstruction::Construct()
+G4VPhysicalVolume* Sh13DetectorConstruction::Construct()
 {
 	ConstructMaterials();
 	ConstructVisibilityAttributes();
@@ -38,7 +38,7 @@ G4VPhysicalVolume* CloverSimDetectorConstruction::Construct()
   return m_pWorld_phyVol;
 }
 
-void CloverSimDetectorConstruction::ConstructMaterials() {
+void Sh13DetectorConstruction::ConstructMaterials() {
    LENSLongDetectorConstruction::ConstructMaterials();
 //   if (m_PLA)
 //      delete m_PLA;
@@ -63,11 +63,11 @@ void CloverSimDetectorConstruction::ConstructMaterials() {
    return;
 }
 
-void CloverSimDetectorConstruction::ConstructDetector() {
+void Sh13DetectorConstruction::ConstructDetector() {
+   
    G4String SDname;
-   m_LENSLongBoxScintillatorSD = new CloverSimDetector( SDname = "/LiquidScintillator" );
+   m_LENSLongBoxScintillatorSD = new Sh13( SDname = "/LiquidScintillator" );
 // The "this" pointer alows the LENSLongLiquidScintillator to get things such as BunkerWidth(), Materials, etc...
-	((CloverSimDetector*)m_LENSLongBoxScintillatorSD)->ConstructDetector( this ); 
+	((Sh13*)m_LENSLongBoxScintillatorSD)->ConstructDetector( this ); 
 
 }
-
