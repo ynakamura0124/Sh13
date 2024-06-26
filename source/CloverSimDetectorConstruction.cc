@@ -66,8 +66,8 @@ void Sh13DetectorConstruction::ConstructMaterials() {
 void Sh13DetectorConstruction::ConstructDetector() {
    
    G4String SDname;
-   m_LENSLongBoxScintillatorSD = new Sh13( SDname = "/LiquidScintillator" );
+   m_LENSLongBoxScintillatorSD = new Sh13Detector( SDname = "/LiquidScintillator" );
 // The "this" pointer alows the LENSLongLiquidScintillator to get things such as BunkerWidth(), Materials, etc...
-	((Sh13*)m_LENSLongBoxScintillatorSD)->ConstructDetector( this ); 
+	((Sh13Detector*)m_LENSLongBoxScintillatorSD)->ConstructDetector( this ); 
 
 }

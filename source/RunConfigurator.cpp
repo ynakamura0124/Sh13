@@ -46,8 +46,8 @@ int RunConfigurator::Configure(G4RunManager *runManager)
 	std::map<std::string, std::function<G4VUserDetectorConstruction *()>> dc_map;
 	dc_map.emplace("LENSLongDetectorConstruction", []()
 				   { return new LENSLongDetectorConstruction(); });
-	dc_map.emplace("CloverSimDetectorConstruction", []()
-				   { return new CloverSimDetectorConstruction(); });
+	// dc_map.emplace("CloverSimDetectorConstruction", []()
+				 //  { return new CloverSimDetectorConstruction(); });
 	dc_map.emplace("Sh13DetectorConstruction", []()
 				   { return new Sh13DetectorConstruction(); });
 	detector_construction_ = dc_map[yaml_reader.GetString("DetectorConstruction")]();

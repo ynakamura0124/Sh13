@@ -1,4 +1,5 @@
 #include "Sh13DetectorConstruction.hh"
+#include "Sh13Detector.hh"
 #include "globals.hh"
 
 #include "G4Material.hh"
@@ -80,9 +81,12 @@ void Sh13DetectorConstruction::ConstructDetector()
 
    G4VisAttributes *layerVisAtt = new G4VisAttributes(G4Colour(1., 1., 1.));
    layerLogicTube->SetVisAttributes(layerVisAtt);
+
+   
 }
 
-void Sh13DetectorConstruction::ConstructDetector()
+
+/*void Sh13DetectorConstruction::ConstructDetector()
 {
 const G4double dph1= 45.*deg;
   G4ThreeVector Geposition1 = G4ThreeVector(0, 0.,Ge1pos);
@@ -92,4 +96,4 @@ const G4double dph1= 45.*deg;
 
   new G4PVPlacement(G4Transform3D(Geangle1,Geposition1),sensitiveLogicTube1,"SensitiveGe1", logicWorld, false, 0, true);
 
-}
+}*/

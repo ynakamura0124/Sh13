@@ -1,4 +1,4 @@
-#include "Sh13DetectorConstruction.hh"
+// #include "Sh13DetectorConstruction.hh"
 #include "globals.hh"
 #include "G4Material.hh"
 #include "G4MaterialTable.hh"
@@ -170,10 +170,10 @@ void Sh13DetectorConstruction::ConstructDetector()
   Geangle2.rotateX(dph2);
 
   new G4PVPlacement(G4Transform3D(Geangle1,Geposition1),sensitiveLogicTube1,"Sensi\
-tiveGe1", logicWorld, false, 0, true);
+tive", logicWorld, false, 0, true);
 
  new G4PVPlacement(G4Transform3D(Geangle2,Geposition2),sensitiveLogicTube2,"Sensi\
-tiveGe2", logicWorld, false, 0, true);
+tive", logicWorld, false, 1, true);
 
 }
 

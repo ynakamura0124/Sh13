@@ -3,12 +3,11 @@ add_library(CloverSimLib SHARED
 	YamlReader.cpp
 	GSStateG4.cpp
 	GSource4G4.cpp
-	CloverSimDetector.cpp
-	CloverSimDetectorConstruction.cc
+	Sh13Detector.cpp
+	Sh13DetectorConstruction.cc
 	PointGammaSourceGeneratorAction.cpp
 	CloverSimAnalysisManager.cpp
 	RunConfigurator.cpp
-	Sh13DetectorConstruction.cc
 	ExN02EventAction.cc
 	ExN02RunAction.cc
 	ExN02TrackerHit.cc

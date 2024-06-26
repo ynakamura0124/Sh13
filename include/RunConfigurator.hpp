@@ -19,7 +19,7 @@
 #include "LENSLongEventAction.hh"
 #include "LENSLongPrimaryGeneratorAction.hh"
 #include "LENSLongDetectorConstruction.hh"
-#include "CloverSimDetectorConstruction.hh"
+// #include "CloverSimDetectorConstruction.hh"
 #include "Sh13DetectorConstruction.hh"
 #include "CloverSimEventAction.hh"
 #include "PointGammaSourceGeneratorAction.hh"

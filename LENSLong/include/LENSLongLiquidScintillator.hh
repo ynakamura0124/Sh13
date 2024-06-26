@@ -71,7 +71,7 @@ class LENSLongLiquidScintillator : public G4VSensitiveDetector
 	inline G4double GetSourceRadius() const { return ( m_SourceRadius ); }
 	inline G4bool IsSourceAlongFace() const { return m_SourceAlongFace; }
 	
-	G4int GetModuleIndex( G4TouchableHistory* thePostTouchable ) const;
+	const G4int GetModuleIndex( G4TouchableHistory* thePostTouchable ) const;
 		
 	G4double GetOpticalPhotonEmissionFraction() const { return m_PhotonEmissionFraction; }
 
