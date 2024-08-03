@@ -6,5 +6,5 @@ CXX_FLAGS = -W -Wall -pedantic -Wno-non-virtual-dtor -Wno-long-long -Wwrite-stri
 
 CXX_DEFINES = -DG4INTY_USE_XT -DG4LIB_BUILD_DLL -DG4UI_USE_TCSH -DG4VIS_USE_OPENGL -DG4VIS_USE_OPENGLX -DLENSLongLib_EXPORTS
 
-CXX_INCLUDES = -I/include -I/home/ynakamura/cloversim/PhysicsList/include -I/home/ynakamura/cloversim/LENSLong/include -I/home/ynakamura/cloversim/BRIKEN/include -I/home/ynakamura/cloversim/include -I/usr/lib/x86_64-linux-gnu/cmake/yaml-cpp/../../../../../include -isystem /home/ynakamura/opt/geant4/include/Geant4 
+CXX_INCLUDES = -I/home/ynakamura/opt/root/include -I/home/ynakamura/cloversim/PhysicsList/include -I/home/ynakamura/cloversim/LENSLong/include -I/home/ynakamura/cloversim/BRIKEN/include -I/home/ynakamura/cloversim/include -I/usr/lib/x86_64-linux-gnu/cmake/yaml-cpp/../../../../../include -isystem /home/ynakamura/opt/geant4/include/Geant4 
 

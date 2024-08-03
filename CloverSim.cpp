@@ -112,6 +112,7 @@ int main(int argc, char** argv)
 #endif
 
       UI->ApplyCommand("/control/execute vis.mac");
+      //UI->ApplyCommand("/control/execute novis.mac");
       session->SessionStart();
 
       delete session;

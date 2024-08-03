@@ -198,60 +198,6 @@ CloverSimAnalysisManager.cpp.s:
 	cd /home/ynakamura/cloversim && $(MAKE) -f source/CMakeFiles/CloverSimLib.dir/build.make source/CMakeFiles/CloverSimLib.dir/CloverSimAnalysisManager.cpp.s
 .PHONY : CloverSimAnalysisManager.cpp.s
 
-CloverSimDetector.o: CloverSimDetector.cpp.o
-
-.PHONY : CloverSimDetector.o
-
-# target to build an object file
-CloverSimDetector.cpp.o:
-	cd /home/ynakamura/cloversim && $(MAKE) -f source/CMakeFiles/CloverSimLib.dir/build.make source/CMakeFiles/CloverSimLib.dir/CloverSimDetector.cpp.o
-.PHONY : CloverSimDetector.cpp.o
-
-CloverSimDetector.i: CloverSimDetector.cpp.i
-
-.PHONY : CloverSimDetector.i
-
-# target to preprocess a source file
-CloverSimDetector.cpp.i:
-	cd /home/ynakamura/cloversim && $(MAKE) -f source/CMakeFiles/CloverSimLib.dir/build.make source/CMakeFiles/CloverSimLib.dir/CloverSimDetector.cpp.i
-.PHONY : CloverSimDetector.cpp.i
-
-CloverSimDetector.s: CloverSimDetector.cpp.s
-
-.PHONY : CloverSimDetector.s
-
-# target to generate assembly for a file
-CloverSimDetector.cpp.s:
-	cd /home/ynakamura/cloversim && $(MAKE) -f source/CMakeFiles/CloverSimLib.dir/build.make source/CMakeFiles/CloverSimLib.dir/CloverSimDetector.cpp.s
-.PHONY : CloverSimDetector.cpp.s
-
-CloverSimDetectorConstruction.o: CloverSimDetectorConstruction.cc.o
-
-.PHONY : CloverSimDetectorConstruction.o
-
-# target to build an object file
-CloverSimDetectorConstruction.cc.o:
-	cd /home/ynakamura/cloversim && $(MAKE) -f source/CMakeFiles/CloverSimLib.dir/build.make source/CMakeFiles/CloverSimLib.dir/CloverSimDetectorConstruction.cc.o
-.PHONY : CloverSimDetectorConstruction.cc.o
-
-CloverSimDetectorConstruction.i: CloverSimDetectorConstruction.cc.i
-
-.PHONY : CloverSimDetectorConstruction.i
-
-# target to preprocess a source file
-CloverSimDetectorConstruction.cc.i:
-	cd /home/ynakamura/cloversim && $(MAKE) -f source/CMakeFiles/CloverSimLib.dir/build.make source/CMakeFiles/CloverSimLib.dir/CloverSimDetectorConstruction.cc.i
-.PHONY : CloverSimDetectorConstruction.cc.i
-
-CloverSimDetectorConstruction.s: CloverSimDetectorConstruction.cc.s
-
-.PHONY : CloverSimDetectorConstruction.s
-
-# target to generate assembly for a file
-CloverSimDetectorConstruction.cc.s:
-	cd /home/ynakamura/cloversim && $(MAKE) -f source/CMakeFiles/CloverSimLib.dir/build.make source/CMakeFiles/CloverSimLib.dir/CloverSimDetectorConstruction.cc.s
-.PHONY : CloverSimDetectorConstruction.cc.s
-
 ExN02EventAction.o: ExN02EventAction.cc.o
 
 .PHONY : ExN02EventAction.o
@@ -468,6 +414,33 @@ RunConfigurator.cpp.s:
 	cd /home/ynakamura/cloversim && $(MAKE) -f source/CMakeFiles/CloverSimLib.dir/build.make source/CMakeFiles/CloverSimLib.dir/RunConfigurator.cpp.s
 .PHONY : RunConfigurator.cpp.s
 
+Sh13Detector.o: Sh13Detector.cpp.o
+
+.PHONY : Sh13Detector.o
+
+# target to build an object file
+Sh13Detector.cpp.o:
+	cd /home/ynakamura/cloversim && $(MAKE) -f source/CMakeFiles/CloverSimLib.dir/build.make source/CMakeFiles/CloverSimLib.dir/Sh13Detector.cpp.o
+.PHONY : Sh13Detector.cpp.o
+
+Sh13Detector.i: Sh13Detector.cpp.i
+
+.PHONY : Sh13Detector.i
+
+# target to preprocess a source file
+Sh13Detector.cpp.i:
+	cd /home/ynakamura/cloversim && $(MAKE) -f source/CMakeFiles/CloverSimLib.dir/build.make source/CMakeFiles/CloverSimLib.dir/Sh13Detector.cpp.i
+.PHONY : Sh13Detector.cpp.i
+
+Sh13Detector.s: Sh13Detector.cpp.s
+
+.PHONY : Sh13Detector.s
+
+# target to generate assembly for a file
+Sh13Detector.cpp.s:
+	cd /home/ynakamura/cloversim && $(MAKE) -f source/CMakeFiles/CloverSimLib.dir/build.make source/CMakeFiles/CloverSimLib.dir/Sh13Detector.cpp.s
+.PHONY : Sh13Detector.cpp.s
+
 Sh13DetectorConstruction.o: Sh13DetectorConstruction.cc.o
 
 .PHONY : Sh13DetectorConstruction.o
@@ -565,12 +538,6 @@ help:
 	@echo "... CloverSimAnalysisManager.o"
 	@echo "... CloverSimAnalysisManager.i"
 	@echo "... CloverSimAnalysisManager.s"
-	@echo "... CloverSimDetector.o"
-	@echo "... CloverSimDetector.i"
-	@echo "... CloverSimDetector.s"
-	@echo "... CloverSimDetectorConstruction.o"
-	@echo "... CloverSimDetectorConstruction.i"
-	@echo "... CloverSimDetectorConstruction.s"
 	@echo "... ExN02EventAction.o"
 	@echo "... ExN02EventAction.i"
 	@echo "... ExN02EventAction.s"
@@ -595,6 +562,9 @@ help:
 	@echo "... RunConfigurator.o"
 	@echo "... RunConfigurator.i"
 	@echo "... RunConfigurator.s"
+	@echo "... Sh13Detector.o"
+	@echo "... Sh13Detector.i"
+	@echo "... Sh13Detector.s"
 	@echo "... Sh13DetectorConstruction.o"
 	@echo "... Sh13DetectorConstruction.i"
 	@echo "... Sh13DetectorConstruction.s"

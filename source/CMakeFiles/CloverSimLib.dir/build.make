@@ -109,31 +109,31 @@ source/CMakeFiles/CloverSimLib.dir/GSource4G4.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/CloverSimLib.dir/GSource4G4.cpp.s"
 	cd /home/ynakamura/cloversim/source && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/ynakamura/cloversim/source/GSource4G4.cpp -o CMakeFiles/CloverSimLib.dir/GSource4G4.cpp.s
 
-source/CMakeFiles/CloverSimLib.dir/CloverSimDetector.cpp.o: source/CMakeFiles/CloverSimLib.dir/flags.make
-source/CMakeFiles/CloverSimLib.dir/CloverSimDetector.cpp.o: source/CloverSimDetector.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/ynakamura/cloversim/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object source/CMakeFiles/CloverSimLib.dir/CloverSimDetector.cpp.o"
-	cd /home/ynakamura/cloversim/source && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/CloverSimLib.dir/CloverSimDetector.cpp.o -c /home/ynakamura/cloversim/source/CloverSimDetector.cpp
+source/CMakeFiles/CloverSimLib.dir/Sh13Detector.cpp.o: source/CMakeFiles/CloverSimLib.dir/flags.make
+source/CMakeFiles/CloverSimLib.dir/Sh13Detector.cpp.o: source/Sh13Detector.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/ynakamura/cloversim/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object source/CMakeFiles/CloverSimLib.dir/Sh13Detector.cpp.o"
+	cd /home/ynakamura/cloversim/source && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/CloverSimLib.dir/Sh13Detector.cpp.o -c /home/ynakamura/cloversim/source/Sh13Detector.cpp
 
-source/CMakeFiles/CloverSimLib.dir/CloverSimDetector.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/CloverSimLib.dir/CloverSimDetector.cpp.i"
-	cd /home/ynakamura/cloversim/source && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/ynakamura/cloversim/source/CloverSimDetector.cpp > CMakeFiles/CloverSimLib.dir/CloverSimDetector.cpp.i
+source/CMakeFiles/CloverSimLib.dir/Sh13Detector.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/CloverSimLib.dir/Sh13Detector.cpp.i"
+	cd /home/ynakamura/cloversim/source && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/ynakamura/cloversim/source/Sh13Detector.cpp > CMakeFiles/CloverSimLib.dir/Sh13Detector.cpp.i
 
-source/CMakeFiles/CloverSimLib.dir/CloverSimDetector.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/CloverSimLib.dir/CloverSimDetector.cpp.s"
-	cd /home/ynakamura/cloversim/source && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/ynakamura/cloversim/source/CloverSimDetector.cpp -o CMakeFiles/CloverSimLib.dir/CloverSimDetector.cpp.s
+source/CMakeFiles/CloverSimLib.dir/Sh13Detector.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/CloverSimLib.dir/Sh13Detector.cpp.s"
+	cd /home/ynakamura/cloversim/source && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/ynakamura/cloversim/source/Sh13Detector.cpp -o CMakeFiles/CloverSimLib.dir/Sh13Detector.cpp.s
 
-source/CMakeFiles/CloverSimLib.dir/CloverSimDetectorConstruction.cc.o: source/CMakeFiles/CloverSimLib.dir/flags.make
-source/CMakeFiles/CloverSimLib.dir/CloverSimDetectorConstruction.cc.o: source/CloverSimDetectorConstruction.cc
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/ynakamura/cloversim/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object source/CMakeFiles/CloverSimLib.dir/CloverSimDetectorConstruction.cc.o"
-	cd /home/ynakamura/cloversim/source && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/CloverSimLib.dir/CloverSimDetectorConstruction.cc.o -c /home/ynakamura/cloversim/source/CloverSimDetectorConstruction.cc
+source/CMakeFiles/CloverSimLib.dir/Sh13DetectorConstruction.cc.o: source/CMakeFiles/CloverSimLib.dir/flags.make
+source/CMakeFiles/CloverSimLib.dir/Sh13DetectorConstruction.cc.o: source/Sh13DetectorConstruction.cc
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/ynakamura/cloversim/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object source/CMakeFiles/CloverSimLib.dir/Sh13DetectorConstruction.cc.o"
+	cd /home/ynakamura/cloversim/source && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/CloverSimLib.dir/Sh13DetectorConstruction.cc.o -c /home/ynakamura/cloversim/source/Sh13DetectorConstruction.cc
 
-source/CMakeFiles/CloverSimLib.dir/CloverSimDetectorConstruction.cc.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/CloverSimLib.dir/CloverSimDetectorConstruction.cc.i"
-	cd /home/ynakamura/cloversim/source && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/ynakamura/cloversim/source/CloverSimDetectorConstruction.cc > CMakeFiles/CloverSimLib.dir/CloverSimDetectorConstruction.cc.i
+source/CMakeFiles/CloverSimLib.dir/Sh13DetectorConstruction.cc.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/CloverSimLib.dir/Sh13DetectorConstruction.cc.i"
+	cd /home/ynakamura/cloversim/source && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/ynakamura/cloversim/source/Sh13DetectorConstruction.cc > CMakeFiles/CloverSimLib.dir/Sh13DetectorConstruction.cc.i
 
-source/CMakeFiles/CloverSimLib.dir/CloverSimDetectorConstruction.cc.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/CloverSimLib.dir/CloverSimDetectorConstruction.cc.s"
-	cd /home/ynakamura/cloversim/source && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/ynakamura/cloversim/source/CloverSimDetectorConstruction.cc -o CMakeFiles/CloverSimLib.dir/CloverSimDetectorConstruction.cc.s
+source/CMakeFiles/CloverSimLib.dir/Sh13DetectorConstruction.cc.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/CloverSimLib.dir/Sh13DetectorConstruction.cc.s"
+	cd /home/ynakamura/cloversim/source && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/ynakamura/cloversim/source/Sh13DetectorConstruction.cc -o CMakeFiles/CloverSimLib.dir/Sh13DetectorConstruction.cc.s
 
 source/CMakeFiles/CloverSimLib.dir/PointGammaSourceGeneratorAction.cpp.o: source/CMakeFiles/CloverSimLib.dir/flags.make
 source/CMakeFiles/CloverSimLib.dir/PointGammaSourceGeneratorAction.cpp.o: source/PointGammaSourceGeneratorAction.cpp
@@ -174,22 +174,9 @@ source/CMakeFiles/CloverSimLib.dir/RunConfigurator.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/CloverSimLib.dir/RunConfigurator.cpp.s"
 	cd /home/ynakamura/cloversim/source && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/ynakamura/cloversim/source/RunConfigurator.cpp -o CMakeFiles/CloverSimLib.dir/RunConfigurator.cpp.s
 
-source/CMakeFiles/CloverSimLib.dir/Sh13DetectorConstruction.cc.o: source/CMakeFiles/CloverSimLib.dir/flags.make
-source/CMakeFiles/CloverSimLib.dir/Sh13DetectorConstruction.cc.o: source/Sh13DetectorConstruction.cc
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/ynakamura/cloversim/CMakeFiles --progress-num=$(CMAKE_PROGRESS_10) "Building CXX object source/CMakeFiles/CloverSimLib.dir/Sh13DetectorConstruction.cc.o"
-	cd /home/ynakamura/cloversim/source && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/CloverSimLib.dir/Sh13DetectorConstruction.cc.o -c /home/ynakamura/cloversim/source/Sh13DetectorConstruction.cc
-
-source/CMakeFiles/CloverSimLib.dir/Sh13DetectorConstruction.cc.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/CloverSimLib.dir/Sh13DetectorConstruction.cc.i"
-	cd /home/ynakamura/cloversim/source && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/ynakamura/cloversim/source/Sh13DetectorConstruction.cc > CMakeFiles/CloverSimLib.dir/Sh13DetectorConstruction.cc.i
-
-source/CMakeFiles/CloverSimLib.dir/Sh13DetectorConstruction.cc.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/CloverSimLib.dir/Sh13DetectorConstruction.cc.s"
-	cd /home/ynakamura/cloversim/source && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/ynakamura/cloversim/source/Sh13DetectorConstruction.cc -o CMakeFiles/CloverSimLib.dir/Sh13DetectorConstruction.cc.s
-
 source/CMakeFiles/CloverSimLib.dir/ExN02EventAction.cc.o: source/CMakeFiles/CloverSimLib.dir/flags.make
 source/CMakeFiles/CloverSimLib.dir/ExN02EventAction.cc.o: source/ExN02EventAction.cc
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/ynakamura/cloversim/CMakeFiles --progress-num=$(CMAKE_PROGRESS_11) "Building CXX object source/CMakeFiles/CloverSimLib.dir/ExN02EventAction.cc.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/ynakamura/cloversim/CMakeFiles --progress-num=$(CMAKE_PROGRESS_10) "Building CXX object source/CMakeFiles/CloverSimLib.dir/ExN02EventAction.cc.o"
 	cd /home/ynakamura/cloversim/source && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/CloverSimLib.dir/ExN02EventAction.cc.o -c /home/ynakamura/cloversim/source/ExN02EventAction.cc
 
 source/CMakeFiles/CloverSimLib.dir/ExN02EventAction.cc.i: cmake_force
@@ -202,7 +189,7 @@ source/CMakeFiles/CloverSimLib.dir/ExN02EventAction.cc.s: cmake_force
 
 source/CMakeFiles/CloverSimLib.dir/ExN02RunAction.cc.o: source/CMakeFiles/CloverSimLib.dir/flags.make
 source/CMakeFiles/CloverSimLib.dir/ExN02RunAction.cc.o: source/ExN02RunAction.cc
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/ynakamura/cloversim/CMakeFiles --progress-num=$(CMAKE_PROGRESS_12) "Building CXX object source/CMakeFiles/CloverSimLib.dir/ExN02RunAction.cc.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/ynakamura/cloversim/CMakeFiles --progress-num=$(CMAKE_PROGRESS_11) "Building CXX object source/CMakeFiles/CloverSimLib.dir/ExN02RunAction.cc.o"
 	cd /home/ynakamura/cloversim/source && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/CloverSimLib.dir/ExN02RunAction.cc.o -c /home/ynakamura/cloversim/source/ExN02RunAction.cc
 
 source/CMakeFiles/CloverSimLib.dir/ExN02RunAction.cc.i: cmake_force
@@ -215,7 +202,7 @@ source/CMakeFiles/CloverSimLib.dir/ExN02RunAction.cc.s: cmake_force
 
 source/CMakeFiles/CloverSimLib.dir/ExN02TrackerHit.cc.o: source/CMakeFiles/CloverSimLib.dir/flags.make
 source/CMakeFiles/CloverSimLib.dir/ExN02TrackerHit.cc.o: source/ExN02TrackerHit.cc
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/ynakamura/cloversim/CMakeFiles --progress-num=$(CMAKE_PROGRESS_13) "Building CXX object source/CMakeFiles/CloverSimLib.dir/ExN02TrackerHit.cc.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/ynakamura/cloversim/CMakeFiles --progress-num=$(CMAKE_PROGRESS_12) "Building CXX object source/CMakeFiles/CloverSimLib.dir/ExN02TrackerHit.cc.o"
 	cd /home/ynakamura/cloversim/source && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/CloverSimLib.dir/ExN02TrackerHit.cc.o -c /home/ynakamura/cloversim/source/ExN02TrackerHit.cc
 
 source/CMakeFiles/CloverSimLib.dir/ExN02TrackerHit.cc.i: cmake_force
@@ -228,7 +215,7 @@ source/CMakeFiles/CloverSimLib.dir/ExN02TrackerHit.cc.s: cmake_force
 
 source/CMakeFiles/CloverSimLib.dir/ExN02TrackerSD.cc.o: source/CMakeFiles/CloverSimLib.dir/flags.make
 source/CMakeFiles/CloverSimLib.dir/ExN02TrackerSD.cc.o: source/ExN02TrackerSD.cc
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/ynakamura/cloversim/CMakeFiles --progress-num=$(CMAKE_PROGRESS_14) "Building CXX object source/CMakeFiles/CloverSimLib.dir/ExN02TrackerSD.cc.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/ynakamura/cloversim/CMakeFiles --progress-num=$(CMAKE_PROGRESS_13) "Building CXX object source/CMakeFiles/CloverSimLib.dir/ExN02TrackerSD.cc.o"
 	cd /home/ynakamura/cloversim/source && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/CloverSimLib.dir/ExN02TrackerSD.cc.o -c /home/ynakamura/cloversim/source/ExN02TrackerSD.cc
 
 source/CMakeFiles/CloverSimLib.dir/ExN02TrackerSD.cc.i: cmake_force
@@ -245,12 +232,11 @@ CloverSimLib_OBJECTS = \
 "CMakeFiles/CloverSimLib.dir/YamlReader.cpp.o" \
 "CMakeFiles/CloverSimLib.dir/GSStateG4.cpp.o" \
 "CMakeFiles/CloverSimLib.dir/GSource4G4.cpp.o" \
-"CMakeFiles/CloverSimLib.dir/CloverSimDetector.cpp.o" \
-"CMakeFiles/CloverSimLib.dir/CloverSimDetectorConstruction.cc.o" \
+"CMakeFiles/CloverSimLib.dir/Sh13Detector.cpp.o" \
+"CMakeFiles/CloverSimLib.dir/Sh13DetectorConstruction.cc.o" \
 "CMakeFiles/CloverSimLib.dir/PointGammaSourceGeneratorAction.cpp.o" \
 "CMakeFiles/CloverSimLib.dir/CloverSimAnalysisManager.cpp.o" \
 "CMakeFiles/CloverSimLib.dir/RunConfigurator.cpp.o" \
-"CMakeFiles/CloverSimLib.dir/Sh13DetectorConstruction.cc.o" \
 "CMakeFiles/CloverSimLib.dir/ExN02EventAction.cc.o" \
 "CMakeFiles/CloverSimLib.dir/ExN02RunAction.cc.o" \
 "CMakeFiles/CloverSimLib.dir/ExN02TrackerHit.cc.o" \
@@ -263,12 +249,11 @@ source/libCloverSimLib.so: source/CMakeFiles/CloverSimLib.dir/YamlParameter.cpp.
 source/libCloverSimLib.so: source/CMakeFiles/CloverSimLib.dir/YamlReader.cpp.o
 source/libCloverSimLib.so: source/CMakeFiles/CloverSimLib.dir/GSStateG4.cpp.o
 source/libCloverSimLib.so: source/CMakeFiles/CloverSimLib.dir/GSource4G4.cpp.o
-source/libCloverSimLib.so: source/CMakeFiles/CloverSimLib.dir/CloverSimDetector.cpp.o
-source/libCloverSimLib.so: source/CMakeFiles/CloverSimLib.dir/CloverSimDetectorConstruction.cc.o
+source/libCloverSimLib.so: source/CMakeFiles/CloverSimLib.dir/Sh13Detector.cpp.o
+source/libCloverSimLib.so: source/CMakeFiles/CloverSimLib.dir/Sh13DetectorConstruction.cc.o
 source/libCloverSimLib.so: source/CMakeFiles/CloverSimLib.dir/PointGammaSourceGeneratorAction.cpp.o
 source/libCloverSimLib.so: source/CMakeFiles/CloverSimLib.dir/CloverSimAnalysisManager.cpp.o
 source/libCloverSimLib.so: source/CMakeFiles/CloverSimLib.dir/RunConfigurator.cpp.o
-source/libCloverSimLib.so: source/CMakeFiles/CloverSimLib.dir/Sh13DetectorConstruction.cc.o
 source/libCloverSimLib.so: source/CMakeFiles/CloverSimLib.dir/ExN02EventAction.cc.o
 source/libCloverSimLib.so: source/CMakeFiles/CloverSimLib.dir/ExN02RunAction.cc.o
 source/libCloverSimLib.so: source/CMakeFiles/CloverSimLib.dir/ExN02TrackerHit.cc.o
@@ -336,7 +321,7 @@ source/libCloverSimLib.so: /home/ynakamura/opt/geant4/lib/libG4global.so
 source/libCloverSimLib.so: /home/ynakamura/opt/geant4/lib/libG4clhep.so
 source/libCloverSimLib.so: /home/ynakamura/opt/geant4/lib/libG4ptl.so.0.0.2
 source/libCloverSimLib.so: source/CMakeFiles/CloverSimLib.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/ynakamura/cloversim/CMakeFiles --progress-num=$(CMAKE_PROGRESS_15) "Linking CXX shared library libCloverSimLib.so"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/ynakamura/cloversim/CMakeFiles --progress-num=$(CMAKE_PROGRESS_14) "Linking CXX shared library libCloverSimLib.so"
 	cd /home/ynakamura/cloversim/source && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/CloverSimLib.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.

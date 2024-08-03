@@ -43,7 +43,6 @@ using namespace CLHEP;
 
 
 
-
 /* Detector Solid */
 void Sh13DetectorConstruction::ConstructDetector()
 {
@@ -52,7 +51,6 @@ void Sh13DetectorConstruction::ConstructDetector()
    
    return;
 }
-
 
 
 /* Detector Material */
@@ -67,7 +65,6 @@ void Sh13DetectorConstruction::ConstructMaterials()
 
    return;
 }
-
 
 
 /* Logical Volume & Physical Volume */
@@ -115,6 +112,11 @@ G4LogicalVolume *layerLogicTube =
 
 
 }
+
+   new G4PVPlacement(angle, sensitivePosit1, layerLogicTube,
+                     "Sensitive", m_pWorld_logVol, false, 0);
+   new G4PVPlacement(angle, sensitivePosit2, layerLogicTube,
+                     "Sensitive", m_pWorld_logVol, false, 1);
 
 
 
@@ -195,4 +197,18 @@ void Sh13DetectorConstruction::ConstructMaterials()
 
     /* Barium */
     G4Isotope* Ba3 = new G4Material(name = "Ba133", z = 56, n = 133, a = 132.91*g/mole);
+}
+
+
+
+void Sh13DetectorConstruction::ConstructDetector()
+{
+const G4double dph1= 45.*deg;
+  G4ThreeVector Geposition1 = G4ThreeVector(0, 0.,Ge1pos);
+  G4RotationMatrix Geangle1 = G4RotationMatrix();
+  Geposition1.rotateY(dph1);
+  Geangle1.rotateY(dph1);
+
+  new G4PVPlacement(G4Transform3D(Geangle1,Geposition1),sensitiveLogicTube1,"SensitiveGe1", logicWorld, false, 0, true);
+
 }
