@@ -163,6 +163,13 @@ void Sh13DetectorConstruction::ConstructDetector()
    Geposition2.rotateY(dph2);
    new G4PVPlacement(G4Transform3D(*Geangle2,Geposition2), layerLogicTube2, "SensitiveGe2", logicworld , false, 0, true);
 
+   // Ge2 CrystalHolder Bottom Al Projection Part
+   G4double Ge2CrystalHolderBottomProHeight = 40 * mm; // undicided
+   G4double Ge2CrystalHolderBottomProDiameter = 31 * mm; // undicided
+   G4double Ge2CrystalHolderBottomProHoleDiameter = Ge2HoleDiameter;
+   
+
+
    // define sensitive detector
    G4SDManager *SDman = G4SDManager::GetSDMpointer();
    G4String trackerChamberSDname = "ExN02/TrackerChamberSD";
