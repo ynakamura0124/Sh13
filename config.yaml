@@ -15,9 +15,9 @@ PointGammaSourceGeneratorAction:
         SourceFile: '152Eu.txt'
 #        SourceFile: 'nogamma.txt'
         NEvent: 100000000
-#        PositionX: 0.0
-#        PositionY: 0.0
-#        PositionZ: 0.0 # YSO
+        PositionX: 0.0
+        PositionY: 0.0
+        PositionZ: 0.0 # YSO
 #        PositionZ: 6.25 # WASABi DS
 #        PositionZ: 39.05 # WASABi US
 

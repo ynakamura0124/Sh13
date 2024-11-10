@@ -77,7 +77,17 @@ void Sh13DetectorConstruction::ConstructDetector()
    G4Box *solidWorld = new G4Box("World", world_sizeXY, world_sizeXY, world_sizeZ);
    G4LogicalVolume *logicworld = new G4LogicalVolume(solidWorld, worldMaterial, "World");  
 */
-   
+/*
+   G4Element *H = new G4Element("Hydrogen", "H", 1., 1.01 * g/mole);
+   //G4Element *O = new G4Element("Oxygen", "O", 8., 16.0 * g/mole);
+   G4Element *C = new G4Element("Carbon", "C", 6., 12.01 * g/mole);
+   G4Material *Pla = new G4Material("Plastics", 1.032 * g/cm3, 2);
+   Pla->AddElement(C, 9);
+   Pla->AddElement(H, 10);
+   // Pla->AddElement(O, 2);
+   G4Material *Al = new G4Material("Aluminum", 13, 26.98 * g/mole, 2.7 * g/cm3, kStateSolid, 300 * kelvin, 1000 * pascal);
+*/
+/*
    // Al mylar Size
    G4double outerSizeX = 130.01 * mm;
    G4double outerSizeY = 100.01 * mm;
@@ -120,7 +130,7 @@ void Sh13DetectorConstruction::ConstructDetector()
    new G4PVPlacement(G4Transform3D(*ASangle,ASposition), ActiveStopper, "ActiveStopper", m_pWorld_logVol, false, 0, true);
    //new G4PVPlacement(G4Transform3D(*ASangle,ASposition), ActiveStopper2, "ActiveStopper", m_pWorld_logVol, false, 0, true);
    new G4PVPlacement(G4Transform3D(*ASangle,ASposition), AlMylar, "AlMylar", m_pWorld_logVol, false, 0, true);
-
+*/
 /*
    // HPGe Detector Solid
    //G4double GeInner = 0 *mm;
@@ -168,6 +178,20 @@ void Sh13DetectorConstruction::ConstructDetector()
    new G4PVPlacement(G4Transform3D(*Geangle2,Geposition2), layerLogicTube2, "SensitiveGe2", m_pWorld_logVol, false, 0, true);
 */
 
+   G4Element *H = new G4Element("Hydrogen", "H", 1., 1.01 * g/mole);
+   //G4Element *O = new G4Element("Oxygen", "O", 8., 16.0 * g/mole);
+   G4Element *C = new G4Element("Carbon", "C", 6., 12.01 * g/mole);
+   G4Material *Pla = new G4Material("Plastics", 1.032 * g/cm3, 2);
+   Pla->AddElement(C, 9);
+   Pla->AddElement(H, 10);
+   // Pla->AddElement(O, 2);
+   G4Material *Al = new G4Material("Aluminum", 13, 26.98 * g/mole, 2.7 * g/cm3, kStateSolid, 300 * kelvin, 1000 * pascal);
+   
+   
+   
+   
+   
+   
    // Ge1 Detector
    // Ge1 Cylinder
    G4double Ge1OuterDiameter = 74.8 * mm;
@@ -187,6 +211,7 @@ void Sh13DetectorConstruction::ConstructDetector()
    G4RotationMatrix *Geangle1 = new G4RotationMatrix(0. * deg, 0. * deg, 0. * deg);
    Geangle1->rotateY(dph1); //
    G4ThreeVector Geposition1 = G4ThreeVector(-126.652 *mm, 0, 0);
+   // G4ThreeVector Geposition1 = G4ThreeVector(0, 0, 0);
    Geposition1.rotateY(dph1); //
    new G4PVPlacement(G4Transform3D(*Geangle1,Geposition1), Ge1Detector, "Ge1Detector", m_pWorld_logVol, false, 0, true);
 
@@ -215,6 +240,7 @@ void Sh13DetectorConstruction::ConstructDetector()
    G4LogicalVolume *Ge1Cup1 = new G4LogicalVolume(Ge1Cup1CompleteCylinder, Al, "Ge1Cup1CompleteCylinderLV");
    // Ge1 Cup1 Position
    G4ThreeVector Ge1Cup1Position = G4ThreeVector(-126.652 *mm, 0, 0); // Geposition1
+   // G4ThreeVector Ge1Cup1Position = G4ThreeVector(0, 0, 0);
    Ge1Cup1Position.rotateY(dph1);
    new G4PVPlacement(G4Transform3D(*Geangle1,Ge1Cup1Position), Ge1Cup1, "Ge1Cup1", m_pWorld_logVol, false, 0, true);
 
@@ -248,6 +274,7 @@ void Sh13DetectorConstruction::ConstructDetector()
    G4LogicalVolume *Ge1Cup2CarbonFiberLV = new G4LogicalVolume(Ge1Cup2CarbonFiber, C_Mat, "Ge1Cup2CarbonFiberLV");
    // Ge1 Cup2 Position
    G4ThreeVector Ge1Cup2Position = G4ThreeVector(-122.562 *mm, 0, 0); // Ge1Cup1Position + Space
+   // G4ThreeVector Ge1Cup2Position = G4ThreeVector(0, 0, 0);
    Ge1Cup2Position.rotateY(dph1);
    new G4PVPlacement(G4Transform3D(*Geangle1,Ge1Cup2Position), Ge1Cup2, "Ge1Cup2", m_pWorld_logVol, false, 0, true);
    new G4PVPlacement(G4Transform3D(*Geangle1,Ge1Cup2Position), Ge1Cup2CarbonFiberLV, "Ge1Cup2CarbonFiber", m_pWorld_logVol, false, 0, true);
@@ -287,12 +314,6 @@ void Sh13DetectorConstruction::ConstructDetector()
    G4Tubs *Ge2CrystalHolderHollow = new G4Tubs("Ge2CrystalHolderHollow", 0, Ge2CrystalHolderInnerDiameter/2, (Ge2CrystalHolderHeight - Ge2CrystalHolderTopThickness - Ge2CrystalHolderBottomThickness)/2, 0, 360. * deg);
    G4ThreeVector Ge2CrystalHolderHollowPosition(0, 0, (Ge2CrystalHolderHeight - Ge2CrystalHolderTopThickness - Ge2CrystalHolderBottomThickness)/2);
    G4SubtractionSolid *Ge2CrystalHolderCylinder = new G4SubtractionSolid("Ge2CylWithHole", Ge2CrystalHolderForm, Ge2CrystalHolderHollow, 0, Ge2CrystalHolderHollowPosition);
-
-   // Ge2 CrystalHolder Side Al Projection Part
-   //G4double Ge2CrystalHolderSideProHeight = 8.6 * mm;
-   //G4double Ge2CrystalHolderSideProWide = (2.7 - Ge2CrystalHolderSideThickness) * mm;
-   //G4double Ge2CrystalHolderBottomProHoleDiameter = Ge2HoleDiameter;
-
    // Ge2 CrystalHolder Bottom Al Projection Part
    G4double Ge2CrystalHolderBottomProHeight = 40 * mm; // unknown
    G4double Ge2CrystalHolderBottomProDiameter = 31 * mm; // unknown
@@ -311,11 +332,6 @@ void Sh13DetectorConstruction::ConstructDetector()
    G4Tubs *Ge2CrystalHolderTeflonHole = new G4Tubs("Ge2CrystalHolderTeflonHole", 0, Ge2CrystalHolderTeflonHoleDiameter/2, Ge2CrystalHolderTeflonHoleHeight/2, 0, 360. * deg);
    G4ThreeVector Ge2CrystalHolderTeflonHolePosition(0, 0, (Ge2CrystalHolderTeflonHeight - Ge2CrystalHolderTeflonHoleHeight)/2);
    G4SubtractionSolid *Ge2CrystalHolderTeflon = new G4SubtractionSolid("Ge2CrystalHolderTeflon", Ge2CrystalHolderTeflonCyl, Ge2CrystalHolderTeflonHole, 0, Ge2CrystalHolderTeflonHolePosition);
-
-   // Ge2 CrystalHolder Volume Combining
-   // G4ThreeVector Ge2CrystalHolderSideProPosition(0, 0, (Ge2EndCupHeight - Ge2EndCupAlPartThickness)/2);
-   // G4UnionSolid Ge2CrystalHolderCylinderWithBottomPro = new G4UnionSolid("Ge2CrystalHolderCylinderWithBottomPro",);
-
    G4ThreeVector Ge2CrystalHolderBottomProPosition(0, 0, -(Ge2CrystalHolderHeight - Ge2CrystalHolderTopThickness - Ge2CrystalHolderBottomThickness)/2);
    G4UnionSolid *Ge2CrystalHolderCylinderWithBottomPro = new G4UnionSolid("Ge2CrystalHolderCylinderWithBottomPro", Ge2CrystalHolderCylinder, Ge2CrystalHolderBottomPro, 0, Ge2CrystalHolderBottomProPosition);
    G4LogicalVolume *Ge2CrystalHolder = new G4LogicalVolume(Ge2CrystalHolderCylinderWithBottomPro, Al, "Ge2CrystalHolderLV");
